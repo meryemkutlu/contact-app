@@ -1,6 +1,6 @@
 import React from "react";
 
-function ContactForm() {
+const ContactForm = () => {
   return (
     <form className="w-full lg:w-4/12 p-5 border border-gray-300 bg-white bg-opacity-50 rounded-lg shadow-lg">
       <div className="grid gap-6 mb-6 md:grid-cols-2">
@@ -88,6 +88,6 @@ function ContactForm() {
       </div>
     </form>
   );
-}
+};
 
 export default ContactForm;
