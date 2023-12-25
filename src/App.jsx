@@ -1,9 +1,11 @@
-import "./App.css";
-
+import Home from "./pages/Home";
 function App() {
   return (
     <>
-      <h1>hello</h1>
+      <nav className="bg-slate-300 text-center text-2xl cursor-pointer text-neutral-800 py-2 lg:py-4 hover:text-neutral-500">
+        Contact App
+      </nav>
+      <Home />
     </>
   );
 }
