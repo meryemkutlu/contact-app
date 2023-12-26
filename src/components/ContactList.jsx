@@ -2,8 +2,8 @@ import React from "react";
 
 const ContactList = () => {
   return (
-    <div className="w-full lg:w-6/12 p-5 mt-5 bg-white bg-opacity-50 shadow-lg rounded-lg ">
-      <label className="w-full text-sm text-gray-500">
+    <div className="w-full lg:w-6/12 p-5 mx-auto mt-5 bg-white bg-opacity-50 shadow-lg rounded-lg ">
+      <table className="w-full text-sm text-gray-500">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 bg-opacity-80">
           <tr>
             <th scope="col" className="p-1">
@@ -38,7 +38,7 @@ const ContactList = () => {
             </td>
           </tr>
         </tbody>
-      </label>
+      </table>
     </div>
   );
 };
