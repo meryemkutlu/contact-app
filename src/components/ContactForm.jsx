@@ -1,8 +1,16 @@
 import React from "react";
 
-const ContactForm = () => {
+const ContactForm = ({ info, setInfo, handleSubmit }) => {
+  const handleChange = (e) => {
+    // console.log(e.target);
+    console.log(e.target.name);
+    setInfo({ ...info, [e.target.name]: e.target.value });
+  };
   return (
-    <form className="w-full lg:w-4/12 p-5 border border-gray-300 mx-auto bg-white bg-opacity-50 rounded-lg shadow-lg">
+    <form
+      className="w-full lg:w-4/12 p-5 border border-gray-300 mx-auto bg-white bg-opacity-50 rounded-lg shadow-lg"
+      onSubmit={handleSubmit}
+    >
       <div className="grid gap-6 mb-6 md:grid-cols-2">
         <div>
           <label
@@ -14,8 +22,11 @@ const ContactForm = () => {
           <input
             type="text"
             id="first_name"
+            name="firstName"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-slate-500 focus:border-slate-500 block w-full p-2.5"
             placeholder="Anthony"
+            value={info.firstName}
+            onChange={handleChange}
             required
           />
         </div>
@@ -29,8 +40,11 @@ const ContactForm = () => {
           <input
             type="text"
             id="last-name"
+            name="lastName"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded0lg focus:ring-slate-500 focus:border-slate-500 block w-full p-2.5"
             placeholder="Harold"
+            value={info.lastName}
+            onChange={handleChange}
             required
           />
         </div>
@@ -45,8 +59,11 @@ const ContactForm = () => {
           <input
             type="text"
             id="email"
+            name="email"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded0lg focus:ring-slate-500 focus:border-slate-500 block w-full p-2.5"
             placeholder="example@gmail.com"
+            value={info.email}
+            onChange={handleChange}
             required
           />
         </div>
@@ -61,8 +78,11 @@ const ContactForm = () => {
           <input
             type="text"
             id="department"
+            name="department"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded0lg focus:ring-slate-500 focus:border-slate-500 block w-full p-2.5"
             placeholder="Web Development"
+            value={info.department}
+            onChange={handleChange}
             required
           />
         </div>
@@ -77,8 +97,11 @@ const ContactForm = () => {
           <input
             type="tel"
             id="phone"
+            name="phone"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-slate-500 focus:border-slate-500 block w-full p-2.5"
             placeholder="+90 (555)-555-5555"
+            value={info.phone}
+            onChange={handleChange}
             required
           />
         </div>
