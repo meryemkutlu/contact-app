@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, handleDelete }) => {
   return (
     <div className="w-full lg:w-6/12 p-5 mx-auto mt-5 bg-white bg-opacity-50 shadow-lg rounded-lg ">
       <table className="w-full text-sm text-gray-500">
@@ -22,7 +22,7 @@ const ContactList = ({ contacts }) => {
         </thead>
         <tbody id="tbody">
           {contacts.map((item) => {
-            const { firstName, lastName, email, department, phone } = item;
+            const { id, firstName, lastName, email, department, phone } = item;
             return (
               <tr
                 className="bg-white border-b bg-opacity-80 text-center hover:bg-gray-50"
@@ -40,7 +40,10 @@ const ContactList = ({ contacts }) => {
                 <td className="p-1">{phone}</td>
                 <td className="p-1">
                   <i className="fa-solid fa-pen-nib text-2xl text-blue-300 pr-3 cursor-pointer"></i>
-                  <i className="fa-solid fa-trash text-2xl text-red-800 cursor-pointer"></i>
+                  <i
+                    className="fa-solid fa-trash text-2xl text-red-800 cursor-pointer"
+                    onClick={() => handleDelete(id)}
+                  ></i>
                 </td>
               </tr>
             );
