@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactList = ({ contacts, handleDelete }) => {
+const ContactList = ({ contacts, handleDelete, setInfo }) => {
   return (
     <div className="w-full lg:w-6/12 p-5 mx-auto mt-5 bg-white bg-opacity-50 shadow-lg rounded-lg ">
       <table className="w-full text-sm text-gray-500">
@@ -39,7 +39,10 @@ const ContactList = ({ contacts, handleDelete }) => {
                 <td className="p-1">{department}</td>
                 <td className="p-1">{phone}</td>
                 <td className="p-1">
-                  <i className="fa-solid fa-pen-nib text-2xl text-blue-300 pr-3 cursor-pointer"></i>
+                  <i
+                    className="fa-solid fa-pen-nib text-2xl text-blue-300 pr-3 cursor-pointer"
+                    onClick={() => setInfo(item)}
+                  ></i>
                   <i
                     className="fa-solid fa-trash text-2xl text-red-800 cursor-pointer"
                     onClick={() => handleDelete(id)}

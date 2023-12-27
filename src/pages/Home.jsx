@@ -28,7 +28,11 @@ const Home = () => {
   return (
     <div className="block lg:flex p-3  gap-4">
       <ContactForm info={info} setInfo={setInfo} handleSubmit={handleSubmit} />
-      <ContactList contacts={contacts} handleDelete={handleDelete} />
+      <ContactList
+        contacts={contacts}
+        setInfo={setInfo}
+        handleDelete={handleDelete}
+      />
     </div>
   );
 };
