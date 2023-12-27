@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import ContactForm from "../components/ContactForm";
 import ContactList from "../components/ContactList";
@@ -12,7 +12,9 @@ const initialState = {
 };
 
 const Home = () => {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(
+    JSON.parse(localStorage.getItem("contacts")) || []
+  );
   const [info, setInfo] = useState(initialState);
 
   const handleSubmit = (e) => {
@@ -29,6 +31,9 @@ const Home = () => {
   const handleDelete = (id) => {
     setContacts(contacts.filter((item) => item.id !== id));
   };
+  useEffect(() => {
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+  }, [contacts]);
   return (
     <div className="block lg:flex p-3  gap-4">
       <ContactForm info={info} setInfo={setInfo} handleSubmit={handleSubmit} />
