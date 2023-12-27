@@ -17,7 +17,11 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setContacts([...contacts, { ...info, id: new Date().getTime() }]);
+    if (info.id) {
+      setContacts(contacts.map((item) => (item.id === info.id ? info : item)));
+    } else {
+      setContacts([...contacts, { ...info, id: new Date().getTime() }]);
+    }
     console.log(info);
     setInfo(initialState);
   };
