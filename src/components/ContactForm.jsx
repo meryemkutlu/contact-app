@@ -1,4 +1,5 @@
 import React from "react";
+import InputMask from "react-input-mask";
 
 const ContactForm = ({ info, setInfo, handleSubmit }) => {
   const handleChange = (e) => {
@@ -8,7 +9,7 @@ const ContactForm = ({ info, setInfo, handleSubmit }) => {
   };
   return (
     <form
-      className="w-full lg:w-4/12 p-5 border border-gray-300 mx-auto bg-white bg-opacity-50 rounded-lg shadow-lg"
+      className="w-full lg:w-4/12 p-5 border border-gray-300 mx-auto bg-white bg-opacity-50 rounded-lg shadow-lg lg:mt-5"
       onSubmit={handleSubmit}
     >
       <div className="grid gap-6 mb-6 md:grid-cols-2">
@@ -94,7 +95,10 @@ const ContactForm = ({ info, setInfo, handleSubmit }) => {
           >
             Phone number
           </label>
-          <input
+
+          <InputMask
+            mask="+\90 (999)-999-9999"
+            maskChar=" "
             type="tel"
             id="phone"
             name="phone"
